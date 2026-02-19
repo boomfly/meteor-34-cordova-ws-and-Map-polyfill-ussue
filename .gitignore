@@ -2,6 +2,7 @@
 node_modules/
 .vscode/
 .env
+programs/build
 
 # Meteor Modern-Tools build context directories
 _build
