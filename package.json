@@ -1,0 +1,44 @@
+{
+  "name": "simple-todos-svelte",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "start:android": "meteor run android-device --mobile-server=http://192.168.1.102:3000",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test:e2e": "playwright test --ui",
+    "build": "meteor build programs/build --packageType=apk --server=http://192.168.1.102:3000",
+    "build:android": "meteor build programs/build",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.23.5",
+    "@swc/helpers": "^0.5.17",
+    "meteor-node-stubs": "^1.2.12"
+  },
+  "devDependencies": {
+    "@meteorjs/rspack": "^1.0.0",
+    "@playwright/test": "^1.58.1",
+    "@rsdoctor/rspack-plugin": "^1.2.3",
+    "@rspack/cli": "^1.7.1",
+    "@rspack/core": "^1.7.1",
+    "@tailwindcss/postcss": "^4.1.18",
+    "autoprefixer": "^10.4.24",
+    "playwright": "^1.58.1",
+    "postcss": "^8.5.6",
+    "postcss-load-config": "^5.1.0",
+    "svelte": "^5.38.2",
+    "svelte-check": "^4.3.1",
+    "svelte-loader": "^3.2.4",
+    "svelte-preprocess": "^6.0.3",
+    "tailwindcss": "^4.1.18"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js",
+    "modern": true
+  }
+}
